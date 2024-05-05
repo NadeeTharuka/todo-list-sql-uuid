@@ -14,7 +14,6 @@ from passlib.context import CryptContext
 from fastapi.responses import RedirectResponse
 from fastapi.security import OAuth2PasswordRequestForm
 
-
 load_dotenv()
 SECRET_KEY = os.getenv('SECRET_KEY')
 ACCESS_TOKEN_EXPIRE_MINUTES=60
@@ -141,6 +140,3 @@ def logout(response: Response):
     response = RedirectResponse("/")
     manager.set_cookie(response,None)
     return response
-
-
-
