@@ -18,7 +18,7 @@ This project is a FastAPI-based todo list application integrated with SQLAlchemy
 ### Clone the repository:
 - bash
 - Copy code
-- git clone https://github.com/your-username/fastapi-todo-list.git
+- git clone https://github.com/Nadee-Tharuka/fastapi-todo-list.git
 ### Install dependencies:
 - bash
 - Copy code
