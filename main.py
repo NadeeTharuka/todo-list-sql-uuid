@@ -1,5 +1,5 @@
 from datetime import timedelta
-from fastapi import FastAPI, Request, Depends, status, Form, Response, Path
+from fastapi import FastAPI, Request, Depends, status, Form, Response, Path, HTTPException
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 from fastapi.encoders import jsonable_encoder
@@ -76,8 +76,7 @@ def root(request: Request):
 
 
 @app.get("/tasks")
-def get_tasks(request: Request, db: Session = Depends(get_db)):
-    user = Depends(manager)
+def get_tasks(request: Request, db: Session = Depends(get_db), user: schemas.User = Depends(manager)):
     if not user:
         raise HTTPException(status_code=401, detail="Not authenticated")
     return templates.TemplateResponse("tasks.html", {"request": request,
