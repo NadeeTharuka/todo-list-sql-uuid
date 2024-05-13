@@ -1,8 +1,10 @@
 from pydantic import BaseModel
 from typing import List, Optional
 
+
 class TaskBase(BaseModel):
     text: str
+
 
 class Task(TaskBase):
     id: str
@@ -11,8 +13,10 @@ class Task(TaskBase):
     class Config:
         orm_mode = True
 
+
 class TaskCreate(TaskBase):
     pass
+
 
 class UserBase(BaseModel):
     username: str
@@ -20,12 +24,14 @@ class UserBase(BaseModel):
     name: str
     hashed_password: str
 
+
 class User(UserBase):
     id: str
     tasks: List[Task] = []
 
     class Config:
         orm_mode = True
+
 
 class UserCreate(UserBase):
     pass
