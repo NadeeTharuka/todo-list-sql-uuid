@@ -17,6 +17,7 @@ SessionLocal = sessionmaker(
 
 Base = declarative_base()
 
+
 class DBContext:
     def __init__(self):
         self.db = SessionLocal()
