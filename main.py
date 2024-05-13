@@ -1,5 +1,5 @@
 from datetime import timedelta
-from fastapi import FastAPI, Request, Depends, status, Form, Response, Path
+from fastapi import FastAPI, Request, Depends, status, Form, Response, Path, HTTPException
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 from fastapi.encoders import jsonable_encoder
